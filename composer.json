@@ -1,0 +1,40 @@
+{
+    "name": "bkief29/pcomposer",
+    "type": "composer-plugin",
+    "description": "A composer plugin to provide the ability to share and reuse packages across the system.",
+    "license": "MIT",
+    "keywords": ["composer", "composer-plugin", "composer-installer"],
+    "authors": [
+        {
+            "name": "Brandon Kiefer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.3",
+        "composer-plugin-api": "^2.0"
+    },
+    "require-dev": {
+        "composer/composer": "^2.3"
+    },
+    "autoload": {
+        "psr-0": {"Composer\\PerformantComposer": "src/"}
+    },
+    "extra": {
+        "class": [
+            "Composer\\PerformantComposer\\LibraryPlugin"
+        ],
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        },
+        "shared-package": {
+            "vendor-dir": "",
+            "symlink-dir": "vendor",
+            "symlink-base-path": "",
+            "symlink-enabled": true,
+            "package-list": [
+                "*"
+            ]
+        }
+    }
+}
