@@ -51,3 +51,19 @@ In your project's composer.json:
     }
 },
 ```
+
+## Extras
+
+### Migrate to pcomposer for all of your projects
+
+> Usage: `pcomposer ~/projects`
+
+```shell
+function pcomposer() {
+  find $1 -type d \( -name "vendor" \) -maxdepth 2 -print0 | while read -d $'\0' file
+  do
+     echo "$file"
+     cd "$file/../" && composer install
+  done
+}
+```
